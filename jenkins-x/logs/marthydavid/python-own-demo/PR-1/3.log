@@ -1,0 +1,147 @@
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-kdfnw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-ftdpq[0m
+{"level":"warn","ts":1572688284.7679532,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572688284.768695,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-kdfnw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-7mwlh[0m
+{"level":"warn","ts":1572688285.8137245,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1572688285.8148408,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-kdfnw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-kdfnw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-marthydavid-python-own-demo-pr-gppbr[0m
+{"level":"warn","ts":1572688290.8587399,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572688292.4851272,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/***********/python-own-demo.git @ master in path /workspace/source"}
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-kdfnw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:5674ed7aa978d039dfbbdfedddd5b4d9371a5f7a,1:63538001ed7107ad68ef2686526c5a2d7bd8ff3a
+DEBUG: ran git fetch --unshallow origin 63538001ed7107ad68ef2686526c5a2d7bd8ff3a: 5674ed7aa978d039dfbbdfedddd5b4d9371a5f7a: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard 5674ed7aa978d039dfbbdfedddd5b4d9371a5f7a in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 63538001ed7107ad68ef2686526c5a2d7bd8ff3a in 
+Merged SHA 63538001ed7107ad68ef2686526c5a2d7bd8ff3a with commit message 'Test commit' into base branch master
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-kdfnw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-kdfnw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+2019/11/02 09:51:35 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0001] Downloading base image python:onbuild        
+2019/11/02 09:51:37 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0003] Executing 3 build triggers                   
+[36mINFO[0m[0003] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0003] Checking for cached layer 10.233.45.23:5000/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73... 
+2019/11/02 09:51:38 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0003] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0003] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0019] Taking snapshot of full filesystem...        
+[36mINFO[0m[0024] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0024] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0024] cmd: /bin/sh                                 
+[36mINFO[0m[0024] args: [-c pip install --no-cache-dir -r requirements.txt] 
+You are using pip version 10.0.1, however version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0026] Taking snapshot of full filesystem...        
+[36mINFO[0m[0028] Using files from context: [/workspace/source] 
+[36mINFO[0m[0028] COPY . /usr/src/app                          
+[36mINFO[0m[0028] Pushing layer 10.233.45.23:5000/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73 to cache now 
+[36mINFO[0m[0028] Taking snapshot of files...                  
+[36mINFO[0m[0028] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0028] COPY requirements.txt .                      
+[36mINFO[0m[0028] Taking snapshot of files...                  
+[36mINFO[0m[0028] ENV PORT 8080                                
+[36mINFO[0m[0028] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0028] EXPOSE 8080                                  
+[36mINFO[0m[0028] cmd: EXPOSE                                  
+[36mINFO[0m[0028] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0028] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0028] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0028] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0028] CMD ["app.py"]                               
+[36mINFO[0m[0028] No files changed in this command, skipping snapshotting. 
+2019/11/02 09:52:04 pushed blob: sha256:6f25778fdd094ab37c96ed0fd7db9a796fbf37c7a62298ce2e19a93bd836c3a5
+2019/11/02 09:52:04 pushed blob: sha256:293465441e627f3f88e9f90b975be61db5b5f322417560c72e8337fc0ca11cd0
+2019/11/02 09:52:04 10.233.45.23:5000/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73: digest: sha256:f3e71b2015d14f964f810b8643c170830b7ff04b634a1375ae9764c4566da38b size: 428
+2019/11/02 09:52:05 pushed blob: sha256:a0b62b26facb4b1b5c7b8cc31aab81ceae6f823c7418bbdc16d88e2db9a18bac
+2019/11/02 09:52:05 pushed blob: sha256:8b9f614fcb55397f502377513cea30797e73018f293168b338c017291775cc69
+2019/11/02 09:52:05 pushed blob: sha256:2095a6e7ee7f12913f1b4e5576a5fa004431474b86cb210255bdae6325784bd6
+2019/11/02 09:52:05 pushed blob: sha256:a7021c9ad5e48c74dda739aac8466b2fa317aaaf2d4b51b08c7fa4f5c93a6ded
+2019/11/02 09:52:05 pushed blob: sha256:293465441e627f3f88e9f90b975be61db5b5f322417560c72e8337fc0ca11cd0
+2019/11/02 09:52:05 pushed blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2019/11/02 09:52:05 pushed blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2019/11/02 09:52:06 pushed blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2019/11/02 09:52:06 pushed blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2019/11/02 09:52:06 pushed blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2019/11/02 09:52:08 pushed blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2019/11/02 09:52:10 pushed blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2019/11/02 09:52:10 pushed blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2019/11/02 09:52:13 pushed blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2019/11/02 09:52:13 10.233.45.23:5000/***********/python-own-demo:0.0.0-SNAPSHOT-PR-1-3: digest: sha256:fb49a1cfb76dce989e4e44d93ad74c5867abb1d762d86d9787218cc0d16c9cfe size: 2384
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-kdfnw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-kdfnw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-3/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-3/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: 10.233.45.23:5000\/***********\/python-own-demo|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-3/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-3" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-kdfnw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Commit author email is empty for: 63538001ed7107ad68ef2686526c5a2d7bd8ff3a
+Looking for commits in: /workspace/source/
+Found commit author match for: *********** with email address: marthy.david@gmail.com
+Created environment ***********-python-own-demo-pr-1
+Namespace **-***********-python-own-demo-pr-1 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: k8s2.marthy.xyz
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: 10.233.45.23:5000/***********/python-own-demo
+    tag: 0.0.0-SNAPSHOT-PR-1-3
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+
+
+Updating PipelineActivities ***********-python-own-demo-pr-1-3 which has status Running
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 793.114244ms
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1.660880159s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 2.349350039s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 2.690253879s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 7.253785045s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 10.799924342s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 13.093403387s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 19.55553519s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 28.911922271s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 51.150193609s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 28.996463611s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1m20.749967235s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1m2.352606353s
+error: error checking if preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz is available: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-preview'. The execution of the pipeline has stopped.[0m
