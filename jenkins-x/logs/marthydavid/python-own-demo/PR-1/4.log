@@ -1,0 +1,143 @@
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-2tfrw-4[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-msvbb[0m
+{"level":"warn","ts":1572689188.7997375,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572689188.8006444,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+failed to create fsnotify watcher: too many open files
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-2tfrw-4[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-fwc7l[0m
+{"level":"warn","ts":1572689189.7926614,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1572689189.7938223,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+failed to create fsnotify watcher: too many open files
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-2tfrw-4[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+failed to create fsnotify watcher: too many open files
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-2tfrw-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-marthydavid-python-own-demo-pr-lzx79[0m
+{"level":"warn","ts":1572689195.9452302,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572689197.4814527,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/***********/python-own-demo.git @ master in path /workspace/source"}
+failed to create fsnotify watcher: too many open files
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-2tfrw-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:5674ed7aa978d039dfbbdfedddd5b4d9371a5f7a,1:63538001ed7107ad68ef2686526c5a2d7bd8ff3a
+DEBUG: ran git fetch --unshallow origin 63538001ed7107ad68ef2686526c5a2d7bd8ff3a: 5674ed7aa978d039dfbbdfedddd5b4d9371a5f7a: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard 5674ed7aa978d039dfbbdfedddd5b4d9371a5f7a in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 63538001ed7107ad68ef2686526c5a2d7bd8ff3a in 
+Merged SHA 63538001ed7107ad68ef2686526c5a2d7bd8ff3a with commit message 'Test commit' into base branch master
+failed to create fsnotify watcher: too many open files
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-2tfrw-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+failed to create fsnotify watcher: too many open files
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-2tfrw-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+2019/11/02 10:06:40 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0001] Downloading base image python:onbuild        
+2019/11/02 10:06:42 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0003] Executing 3 build triggers                   
+[36mINFO[0m[0003] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0003] Checking for cached layer docker-registry.**.k8s2.marthy.xyz/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73... 
+2019/11/02 10:06:44 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0003] Using caching version of cmd: RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0003] Using files from context: [/workspace/source] 
+[36mINFO[0m[0003] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0003] cmd: EXPOSE                                  
+[36mINFO[0m[0003] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0003] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0003] Taking snapshot of full filesystem...        
+[36mINFO[0m[0004] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0004] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0004] Taking snapshot of files...                  
+[36mINFO[0m[0004] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0004] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0004] Taking snapshot of files...                  
+[36mINFO[0m[0004] Using files from context: [/workspace/source] 
+[36mINFO[0m[0004] COPY . /usr/src/app                          
+[36mINFO[0m[0004] Taking snapshot of files...                  
+[36mINFO[0m[0004] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0004] COPY requirements.txt .                      
+[36mINFO[0m[0004] Taking snapshot of files...                  
+[36mINFO[0m[0004] ENV PORT 8080                                
+[36mINFO[0m[0004] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0004] EXPOSE 8080                                  
+[36mINFO[0m[0004] cmd: EXPOSE                                  
+[36mINFO[0m[0004] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0004] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0004] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0004] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0004] CMD ["app.py"]                               
+[36mINFO[0m[0004] No files changed in this command, skipping snapshotting. 
+2019/11/02 10:06:45 existing blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2019/11/02 10:06:45 existing blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2019/11/02 10:06:45 existing blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2019/11/02 10:06:45 existing blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2019/11/02 10:06:45 existing blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2019/11/02 10:06:45 existing blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2019/11/02 10:06:45 existing blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2019/11/02 10:06:45 existing blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2019/11/02 10:06:45 existing blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2019/11/02 10:06:45 pushed blob: sha256:230b38b3410d8871df33275a1dcbbf869d69ac0001f53d30fc0eb8855957cbe3
+2019/11/02 10:06:45 pushed blob: sha256:cdbe2e62633f7dccce8684fe9fb5e95c6e9f5e470b39206818427e44b6cd941f
+2019/11/02 10:06:45 pushed blob: sha256:481955349bb047c22e33dd9540df5063f70eeeef7227d9c6bd992d6a0a228023
+2019/11/02 10:06:45 pushed blob: sha256:deb41714783e14738f180e4e42b2bff6071786de8bf9c498a1158d3cc36dd927
+2019/11/02 10:06:45 pushed blob: sha256:fe796793ad8f3e5692d6cab6e00428160c03cc4a1c98c8ba03f356a2c0184b6a
+2019/11/02 10:06:45 docker-registry.**.k8s2.marthy.xyz/***********/python-own-demo:0.0.0-SNAPSHOT-PR-1-4: digest: sha256:2a08d8e34b72ce49ae663e691e356bbc667092ae89024e63a59b94814caf1935 size: 2384
+failed to create fsnotify watcher: too many open files
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-2tfrw-4[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+failed to create fsnotify watcher: too many open files
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-2tfrw-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-4/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-4/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: docker-registry.**.k8s2.marthy.xyz\/***********\/python-own-demo|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-4/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-4" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+failed to create fsnotify watcher: too many open files
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-2tfrw-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Commit author email is empty for: 63538001ed7107ad68ef2686526c5a2d7bd8ff3a
+Looking for commits in: /workspace/source/
+Found commit author match for: *********** with email address: marthy.david@gmail.com
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: k8s2.marthy.xyz
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: docker-registry.**.k8s2.marthy.xyz/***********/python-own-demo
+    tag: 0.0.0-SNAPSHOT-PR-1-4
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+
+
+Updating PipelineActivities ***********-python-own-demo-pr-1-4 which has status Running
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 793.114244ms
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1.660880159s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 2.349350039s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 2.690253879s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 7.253785045s
+WARNING: preview application http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz not available, error was 503 503 Service Temporarily Unavailable, delaying for: 10.799924342s
+Preview application is now available at: http://python-own-demo.**-***********-python-own-demo-pr-1.k8s2.marthy.xyz
+failed to create fsnotify watcher: too many open files
