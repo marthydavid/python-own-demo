@@ -1,0 +1,50 @@
+
+Showing logs for build [32mmarthydavid-python-own-demo-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-bkzdz[0m
+{"level":"warn","ts":1572687837.7320583,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572687837.7333992,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmarthydavid-python-own-demo-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-7n7nn[0m
+{"level":"warn","ts":1572687838.7164667,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1572687838.7181385,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mmarthydavid-python-own-demo-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmarthydavid-python-own-demo-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-marthydavid-python-own-demo-mas-mkcjd[0m
+{"level":"warn","ts":1572687861.7588964,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572687863.4418547,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/***********/python-own-demo.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mmarthydavid-python-own-demo-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:5674ed7aa978d039dfbbdfedddd5b4d9371a5f7a
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmarthydavid-python-own-demo-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mmarthydavid-python-own-demo-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mmarthydavid-python-own-demo-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x40 pc=0x10e3cea]
+
+goroutine 1 [running]:
+github.com/GoogleContainerTools/kaniko/vendor/github.com/google/go-containerregistry/pkg/v1/remote.Write(0x19c78e0, 0xc420082740, 0x0, 0x0, 0x199c7c0, 0x24c55c0, 0x199c200, 0xc420049730, 0x7ffe05624de8, 0x5)
+	/go/src/github.com/GoogleContainerTools/kaniko/vendor/github.com/google/go-containerregistry/pkg/v1/remote/write.go:44 +0x3a
+github.com/GoogleContainerTools/kaniko/pkg/executor.DoPush(0x0, 0x0, 0x24a7720, 0x0, 0x0)
+	/go/src/github.com/GoogleContainerTools/kaniko/pkg/executor/push.go:100 +0x89b
+github.com/GoogleContainerTools/kaniko/cmd/executor/cmd.glob..func2(0x2498240, 0xc42019a100, 0x0, 0x8)
+	/go/src/github.com/GoogleContainerTools/kaniko/cmd/executor/cmd/root.go:89 +0xb3
+github.com/GoogleContainerTools/kaniko/vendor/github.com/spf13/cobra.(*Command).execute(0x2498240, 0xc4200380a0, 0x8, 0x8, 0x2498240, 0xc4200380a0)
+	/go/src/github.com/GoogleContainerTools/kaniko/vendor/github.com/spf13/cobra/command.go:766 +0x2c1
+github.com/GoogleContainerTools/kaniko/vendor/github.com/spf13/cobra.(*Command).ExecuteC(0x2498240, 0x0, 0x184814a, 0x25)
+	/go/src/github.com/GoogleContainerTools/kaniko/vendor/github.com/spf13/cobra/command.go:852 +0x30a
+github.com/GoogleContainerTools/kaniko/vendor/github.com/spf13/cobra.(*Command).Execute(0x2498240, 0xc4205c1f78, 0xc4200460b8)
+	/go/src/github.com/GoogleContainerTools/kaniko/vendor/github.com/spf13/cobra/command.go:800 +0x2b
+main.main()
+	/go/src/github.com/GoogleContainerTools/kaniko/cmd/executor/main.go:26 +0x2d
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
