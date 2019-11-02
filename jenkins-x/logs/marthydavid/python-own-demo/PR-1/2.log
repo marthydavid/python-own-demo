@@ -1,0 +1,41 @@
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-5l7nb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-6lg2d[0m
+{"level":"warn","ts":1572688166.819731,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572688166.8209949,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-5l7nb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-bq9hz[0m
+{"level":"warn","ts":1572688167.4000075,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1572688167.4031467,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-5l7nb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-5l7nb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-marthydavid-python-own-demo-pr-sjtjp[0m
+{"level":"warn","ts":1572688173.4795878,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572688175.0766118,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/***********/python-own-demo.git @ master in path /workspace/source"}
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-5l7nb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:5674ed7aa978d039dfbbdfedddd5b4d9371a5f7a,1:a7e4ca02f73d6fab93857d5c0fe45ce39558133e
+DEBUG: ran git fetch --unshallow origin a7e4ca02f73d6fab93857d5c0fe45ce39558133e: 5674ed7aa978d039dfbbdfedddd5b4d9371a5f7a: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard 5674ed7aa978d039dfbbdfedddd5b4d9371a5f7a in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge a7e4ca02f73d6fab93857d5c0fe45ce39558133e in 
+Merged SHA a7e4ca02f73d6fab93857d5c0fe45ce39558133e with commit message 'Test commit' into base branch master
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-5l7nb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mmarthydavid-python-own-demo-pr-5l7nb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+2019/11/02 09:49:38 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0001] Downloading base image python:onbuild        
+2019/11/02 09:49:39 No matching credentials were found, falling back on anonymous
+error building image: error building stage: lstat /workspace/source/requirements.txt: no such file or directory
+[36mINFO[0m[0002] Executing 3 build triggers                   
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
